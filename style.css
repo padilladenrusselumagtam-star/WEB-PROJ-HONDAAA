@@ -428,10 +428,12 @@ section {
     .nav-bar {
         padding: 0 15px;
         height: 55px;
+        display: flex;
     }
     .nav-links a {
         padding: 8px 14px;
         font-size: 1em;
+        display: flex;
     }
     /* Adjusts the 'pop' scroll-reveal sections */
     .scroll-reveal {
@@ -472,6 +474,7 @@ section {
     .nav-bar {
         justify-content: space-between;
         position: sticky;
+        display: flex;
     }
     .nav-links ul {
         display: flex; 
@@ -546,7 +549,7 @@ section {
     /* Reduces default horizontal padding */
     .nav-bar {
         padding: 0 10px;
-        
+        display: flex;
     }
     /* Adjusts font sizes for readability */
     h2, h3 {
