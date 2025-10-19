@@ -421,3 +421,188 @@ section {
     width: 50%;
     box-sizing: border-box;
 }
+
+/*For responsiveness (100% AI)*/
+@media (max-width: 1024px) {
+    /* Adjusts padding for medium-sized screens (laptops/large tablets) */
+    .nav-bar {
+        padding: 0 15px;
+        height: 55px;
+    }
+
+    .nav-links a {
+        padding: 8px 14px;
+        font-size: 1em;
+    }
+
+    /* Adjusts the 'pop' scroll-reveal sections */
+    .scroll-reveal {
+        padding: 40px 15px;
+    }
+    
+    /* Targets the large, padded home section */
+    #home .scroll-reveal {
+        padding: 100px 50px;
+    }
+
+    /* Reduces the gap in the product grid */
+    .product-grid {
+        gap: 20px;
+    }
+    
+    /* Smaller gap and width for the visit section */
+    .visit-container {
+        gap: 20px;
+        flex-wrap: wrap; /* Allows it to stack on smaller screens if needed */
+        justify-content: center;
+    }
+
+    .visit-text-content,
+    .visit-map-container {
+        max-width: 90%;
+        flex: none; /* Disables flex grow/shrink for a more controlled layout */
+    }
+
+    .visit-map-container {
+        height: 350px;
+    }
+
+    .popcontact {
+        max-width: 400px;
+    }
+
+    .contact-button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablet/Mobile Adjustments */
+
+    /* Stacks the navigation links instead of showing them in the bar. 
+       A full mobile menu implementation would require HTML/JavaScript, 
+       but this prepares the layout for stacking or hiding. */
+    .nav-links ul {
+        display: none; /* Typically, a mobile menu icon would be shown instead */
+    }
+    .nav-bar {
+        justify-content: center; /* Center the logo when links are hidden */
+    }
+
+    .logo-container img {
+        height: 40px;
+    }
+    
+    /* Reduces vertical padding on the main section elements */
+    section {
+        padding: 4vh 5vw;
+    }
+
+    /* Centers the video content vertically on smaller screens if it's not the full height */
+    .honda-trailer {
+        min-height: 80vh;
+        padding-top: 50px; /* Reduced padding from top */
+        margin-top: -50px; /* Aligns with nav-bar height reduction */
+    }
+
+    .trailer-content {
+        width: 95%;
+    }
+
+    .trailer-title {
+        letter-spacing: 2px;
+        margin-top: 20px;
+    }
+
+    /* Adjusts the large home section for mobile */
+    #home .scroll-reveal {
+        padding: 80px 20px;
+    }
+
+    /* Stacks the visit-container content vertically */
+    .visit-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .visit-text-content,
+    .visit-map-container {
+        max-width: 90%;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .visit-map-container {
+        height: 300px;
+    }
+    
+    /* Adjusts product section padding */
+    #product {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .popProduct h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    /* Makes product cards slightly taller on mobile */
+    .product-card {
+        min-height: 300px;
+    }
+    
+    .product-grid {
+        /* Ensures product cards stack nicely by making minimum size smaller */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small Phone Adjustments */
+    
+    /* Reduces default horizontal padding */
+    .nav-bar {
+        padding: 0 10px;
+    }
+
+    /* Adjusts font sizes for readability */
+    h2, h3 {
+        font-size: 1.2em;
+    }
+    
+    /* Adjusts the large 'text' class */
+    .text {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    /* Ensures full width and center alignment for contact button */
+    .contact-button {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .popcontact {
+        padding: 20px 10px;
+    }
+    
+    /* Ensures product cards take up almost full width when stacked */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ensures map takes up almost full screen width */
+    .visit-map-container {
+        height: 250px;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    /* Removes horizontal padding from the home section */
+    #home .scroll-reveal {
+        padding: 60px 10px;
+    }
+}
