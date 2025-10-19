@@ -1,0 +1,407 @@
+/*THIS IS FOR THE MOTORS, CARS, AND SHIIIIIIIIIIIII*/
+
+:root{
+    --color-primary-red: #E70411;
+    --color-primary-dark-red: #A30000;
+    --color-bg-white: #ffffff;
+    --color-bg-grey: #dfdede;
+    --color-bg-dark-grey: rgb(156, 156, 156);
+    --color-bg-white-grey: #46474Cff;
+    --color-bg-black: #111111;
+    --color-text-white: white;
+    --color-text-black: #000000;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+/*HEADER*/
+
+hr {
+    border: none;
+    border-top: 2px solid var(--color-primary-red);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo-container img {
+    height: 45px;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+body {
+    background-color: var(--color-bg-white);
+    min-height: 100vh;
+    font-family: 'Verdana', Tahoma, sans-serif;
+    color: var(--color-text-dark); 
+
+}
+
+.nav-bar{
+    background-color: var(--color-primary-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: none;
+    padding: 0 25px;
+    z-index: 1000;
+    top: 0;
+    height: 60px;
+}
+
+.nav-links{
+    list-style: none;
+
+}
+
+.nav-links ul{
+    list-style: none;
+    display: flex;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-white);
+    padding: 10px 18px;
+    font-size: 1.05em;
+    border-radius: 7px;
+    transition: 0.3s;
+    
+}
+
+.nav-links a:hover {
+    background: var(--color-text-white);
+    color: var(--color-primary-red);
+}
+
+h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+    color: var(--color-text-white);
+}
+
+h2, h3 {
+    font-family: 'Arial', Helvetica, sans-serif;
+    color: var(--color-primary-red);
+}
+
+/* MAIN CONTENT */
+main {
+    padding-top: 20px;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PRODUCT SECTIONS */
+.popProduct {
+    padding: 50px;
+    text-align: center;
+}
+
+.popProduct h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--color-primary-red);
+}
+
+.product-content {
+    padding: 20px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.product-contents {
+    padding: 20px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    color: var(--color-text-white);
+}
+
+/* PRODUCT GRID & CARD STYLES */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 50px;
+    margin-top: 20px;
+}
+
+/* --- NEW SLIDING CONTAINER STYLES --- */
+/* The window that clips the sliding content */
+.slide-viewport-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* The element that holds all panels and slides */
+.product-slide-container {
+    display: flex; /* Arranges panels side-by-side */
+    /* **CHANGE 1: Width adjusted from 300% to 400% for 4 panels** */
+    width: 400%; 
+    transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+}
+
+/* Each content panel */
+.slide-panel {
+    /* **CHANGE 2: Width adjusted from 33.3333% to 25% for 4 panels** */
+    width: 25%; 
+    flex-shrink: 0; /* Prevents panel from shrinking */
+    padding-bottom: 50px; /* Add some space below the content */
+}
+
+/* Ensure the product grid fills the panel width */
+.slide-panel .product-grid {
+    padding: 0 50px; /* Apply padding inside the slide-panel */
+}
+/* --- END NEW SLIDING CONTAINER STYLES --- */
+
+
+.product-card {
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-bg-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 20px;
+
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.product-card1 {
+    background-color: var(--color-bg-white-grey);
+    border: 1px solid var(--color-bg-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    /* Ensure .product-card1 is part of the grid/flex layout, removed inline-block for grid context */
+}
+
+.product-card:hover, .product-card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img, .product-card1 img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3, .product-card1 h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--color-primary-red);
+}
+
+/* Styles for the Category Navigation Tabs */
+.category-nav {
+    display: flex;
+    justify-content: center; /* Center the links */
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-bg-grey);
+    padding-bottom: 5px;
+    gap: 30px;
+    overflow-x: auto; 
+    padding: 0 50px;
+}
+
+.category-link {
+    text-decoration: none;
+    color: var(--color-bg-white-grey);
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 3px solid transparent;
+    flex-shrink: 0;
+}
+
+.category-link:hover {
+    color: var(--color-primary-red);
+    border-color: var(--color-primary-red);
+}
+
+/* Active state for category link */
+.category-link.active-category {
+    color: var(--color-primary-red);
+    border-color: var(--color-primary-red);
+    font-weight: 700;
+}
+
+
+.product-button, .product-button1 {
+    display: inline-block;
+    background-color: var(--color-primary-red);
+    color: var(--color-text-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover, .product-button1:hover {
+    background-color: var(--color-primary-dark-red);
+}
+
+/* CONTACT SECTION */
+#contact {
+    background-color: var(--color-bg-grey);
+    padding: 50px 0;
+}
+
+.popcontact {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.popcontact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--color-bg-black);
+}
+
+.text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--color-bg-white-grey);
+}
+
+.contact-button {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: var(--color-primary-dark-red);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    /* Tablet Adjustments */
+    .nav-bar {
+        padding: 0 20px;
+        height: 60px;
+    }
+    .header-text-container h1 {
+        font-size: 1.2em;
+    }
+    .nav-links ul {
+        gap: 10px;
+    }
+    .nav-links a {
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+    .popProduct {
+        padding: 30px 0;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+    .popProduct h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    /* Makes product cards slightly taller on mobile */
+    .product-card, .product-card1 {
+        min-height: 300px;
+    }
+    .product-grid {
+        /* Ensures product cards stack nicely by making minimum size smaller */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Adjust padding for category nav and slide container on smaller screens */
+    .category-nav, .product-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 480px) {
+    /* Small Phone Adjustments */
+    /* Reduces default horizontal padding */
+    .nav-bar {
+        padding: 0 10px;
+        display: flex;
+    }
+    /* Adjusts font sizes for readability */
+    h2, h3 {
+        font-size: 1.2em;
+    }
+    /* Adjusts the large 'text' class */
+    .text {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    /* Ensures full width and center alignment for contact button */
+    .contact-button {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+    .popcontact {
+        padding: 20px;
+    }
+    .product-card, .product-card1 {
+        padding: 15px;
+        min-height: 280px;
+    }
+    .product-grid {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    /* Ensure the product slide container and cards are responsive */
+    .category-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 15px;
+    }
+    .slide-panel .product-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
