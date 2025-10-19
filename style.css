@@ -17,8 +17,6 @@
 
 .logo-container img {
     height: 45px;
-    display: flex;
-    align-items: center;
 }
 
 .logo-group {
@@ -163,7 +161,7 @@ section {
 
 
 
-/*SCROLL*/
+/*SCROLL*/ /*scroll animation(AI & YT)*/
 
 .scroll-reveal {
     opacity: 0;
