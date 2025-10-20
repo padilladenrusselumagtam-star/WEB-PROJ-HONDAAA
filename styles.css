@@ -346,86 +346,121 @@ main {
 /* MEDIA QUERIES */
 
 @media (max-width: 768px) {
-    /* Tablet Adjustments */
-    .nav-bar {
-        padding: 0 20px;
-        height: 60px;
+    /* Adjusts padding for all sections */
+    section {
+        padding-top: 30px; 
+        padding-bottom: 30px; 
     }
-    .header-text-container h1 {
-        font-size: 1.2em;
+    .popProduct, .popcontact {
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .nav-links ul {
-        gap: 10px;
-    }
-    .nav-links a {
-        padding: 5px 8px;
-        font-size: 0.9em;
-    }
-    .popProduct {
-        padding: 30px 0;
-        margin-top: 50px;
-        padding-bottom: 50px;
-        margin-bottom: 50px;
-    }
-    .popProduct h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-    /* Makes product cards slightly taller on mobile */
-    .product-card, .product-card1 {
-        min-height: 300px;
-    }
-    .product-grid {
-        /* Ensures product cards stack nicely by making minimum size smaller */
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    /* Adjust padding for category nav and slide container on smaller screens */
-    .category-nav, .product-grid {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-@media (max-width: 480px) {
-    /* Small Phone Adjustments */
-    /* Reduces default horizontal padding */
+    /* Header/Nav adjustments */
     .nav-bar {
         padding: 0 10px;
-        display: flex;
     }
-    /* Adjusts font sizes for readability */
-    h2, h3 {
-        font-size: 1.2em;
+    .header-text-container h1 {
+        font-size: 1.5em;
     }
-    /* Adjusts the large 'text' class */
-    .text {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    .nav-links ul {
+        flex-wrap: wrap; /* Allows navigation links to wrap */
+        justify-content: center;
+        gap: 5px; 
     }
-    /* Ensures full width and center alignment for contact button */
-    .contact-button {
-        width: 80%;
-        margin: 10px auto;
-        display: block;
+    .nav-links a {
+        padding: 10px 5px;
+        font-size: 0.9em;
     }
-    .popcontact {
+    
+    /* Category Navigation */
+    .category-nav {
+        flex-wrap: wrap; /* Allows category links to wrap */
+        justify-content: center;
+        gap: 8px;
+    }
+    .category-link {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        white-space: normal; /* Allow text to wrap if necessary */
+    }
+
+    /* Product Grid: 2 columns on tablet */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* Product Cards: Ensure uniform appearance */
+    .product-card, .product-card1 {
         padding: 20px;
+        min-height: 320px; 
     }
+}
+
+/* Smaller Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    /* FIX: Ensure nav is visible and stacks correctly */
+    .nav-bar {
+        padding: 10px 10px; /* Add vertical padding for breathing room */
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center;
+        height: 100px;
+    }
+    .header-text-container h1 {
+        font-size: 1.3em; /* Smaller header title */
+    }
+    .logo-group {
+        width: 100%; 
+        justify-content: center; /* Keep logo group centered within the column */
+        margin-bottom: 10px; /* Space between logo and links */
+    }
+    /* FIX: Ensure nav links are visible and centered below the logo group */
+    .nav-links {
+        display: block; /* Ensure the navigation container is visible (removes old 'display: none') */
+        width: 100%;
+    }
+    .nav-links ul {
+        justify-content: center; /* Center the links within the nav container */
+        gap: 8px; /* Slightly tighter gap for small screens */
+    }
+
+    /* Ensures links have proper touch target size and center their text */
+    .nav-links a {
+        padding: 8px 0; 
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /* Adjusts section titles */
+    .popProduct h2, .popcontact h2 {
+        font-size: 2em;
+    }
+
+    /* Product Grid: Single column stack */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    /* Product Cards: Smaller padding and image constraints */
     .product-card, .product-card1 {
         padding: 15px;
         min-height: 280px;
     }
-    .product-grid {
-        gap: 20px;
-        padding: 0 20px;
+    .product-card img, .product-card1 img {
+        max-height: 120px;
     }
-    /* Ensure the product slide container and cards are responsive */
-    .category-nav {
-        padding-left: 10px;
-        padding-right: 10px;
-        gap: 15px;
+    /* Contact Button: Full width block element */
+    .contact-button {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+        display: block;
     }
-    .slide-panel .product-grid {
-        padding-left: 20px;
-        padding-right: 20px;
+    /* Category Navigation: Even smaller links */
+    .category-link {
+        font-size: 0.8em;
     }
 }
+
+
