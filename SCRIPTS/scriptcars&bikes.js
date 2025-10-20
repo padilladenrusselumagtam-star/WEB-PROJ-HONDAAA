@@ -159,23 +159,26 @@ const slider = document.getElementById('big-bike-slider');
 
         /**
          * Moves the content slider horizontally based on the target panel ID.
-         * @param {string} targetId - The target panel's ID ('view-1', 'view-2', 'view-3', or 'view-4').
+         * @param {string} targetId - The target panel's ID ('view-1' through 'view-5').
          */
         function showPanel(targetId) {
             let translateValue = 'translateX(0%)'; // Default to view-1
 
-            /* **CHANGE 3: Updated translation logic for 4 panels (25% each)** */
+            /* **UPDATED: Translation logic for 5 panels (20% each)** */
             if (targetId === 'view-2') {
-                // Shift the container to show the second panel (25% * 1)
-                translateValue = 'translateX(-25%)'; 
+                // Shift for the second panel (20% * 1)
+                translateValue = 'translateX(-20%)'; 
             } else if (targetId === 'view-3') {
-                // Shift the container to show the third panel (25% * 2)
-                translateValue = 'translateX(-50%)'; 
+                // Shift for the third panel (20% * 2)
+                translateValue = 'translateX(-40%)'; 
             } else if (targetId === 'view-4') {
-                // Shift the container to show the fourth panel (25% * 3)
-                translateValue = 'translateX(-75%)'; 
+                // Shift for the fourth panel (20% * 3)
+                translateValue = 'translateX(-60%)'; 
+            } else if (targetId === 'view-5') {
+                // Shift for the fifth panel (20% * 4)
+                translateValue = 'translateX(-80%)'; 
             }
-            /* **END CHANGE 3** */
+            /* **END UPDATE** */
 
 
             // Apply the horizontal slide

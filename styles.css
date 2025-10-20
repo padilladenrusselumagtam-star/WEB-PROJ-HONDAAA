@@ -95,7 +95,15 @@ h2, h3 {
     color: var(--color-primary-red);
 }
 
+.text {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    color: var(--color-primary-red);
+    font-family: none;
+}
+
 /* MAIN CONTENT */
+
 main {
     padding-top: 20px;
 }
@@ -145,7 +153,7 @@ main {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 10px;
     padding: 0 50px;
     margin-top: 20px;
 }
@@ -160,15 +168,15 @@ main {
 /* The element that holds all panels and slides */
 .product-slide-container {
     display: flex; /* Arranges panels side-by-side */
-    /* **CHANGE 1: Width adjusted from 300% to 400% for 4 panels** */
-    width: 400%; 
+    /* **CHANGE 1: Width adjusted from 400% to 500% for 5 panels** */
+    width: 500%; 
     transition: transform 0.5s ease-in-out; /* Smooth slide animation */
 }
 
 /* Each content panel */
 .slide-panel {
-    /* **CHANGE 2: Width adjusted from 33.3333% to 25% for 4 panels** */
-    width: 25%; 
+    /* **CHANGE 2: Width adjusted from 25% to 20% for 5 panels** */
+    width: 20%; 
     flex-shrink: 0; /* Prevents panel from shrinking */
     padding-bottom: 50px; /* Add some space below the content */
 }
@@ -203,9 +211,11 @@ main {
     transition: transform 0.3s ease;
     padding: 20px;
 
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+   
     /* Ensure .product-card1 is part of the grid/flex layout, removed inline-block for grid context */
 }
 
@@ -282,15 +292,29 @@ main {
 
 /* CONTACT SECTION */
 #contact {
-    background-color: var(--color-bg-grey);
+    background-color: var(--color-bg-white);
     padding: 50px 0;
+}
+
+#contact .footer {
+    text-align: center;
 }
 
 .popcontact {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    padding: 20px;
+    
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5vh 3vw;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: var(--color-text-black); 
+    background-color: var(--color-bg-grey);
 }
 
 .popcontact h2 {
@@ -306,17 +330,17 @@ main {
 }
 
 .contact-button {
-    background-color: var(--color-primary-red);
-    color: var(--color-text-white);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
+    color: var(--color-primary-red);
+    border: 1px solid var(--color-primary-red);
+    padding: 10px 20px;
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
 }
 
 .contact-button:hover {
     background-color: var(--color-primary-dark-red);
+    color: var(--color-text-white);
 }
 
 /* MEDIA QUERIES */
